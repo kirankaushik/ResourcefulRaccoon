@@ -16,5 +16,11 @@
     <members>*</members>
     <name>AuraDefinitionBundle</name>
   </types>
+  <types>
+  <members>Product2</members>
+  <members>Opportunity</members>
+    <members>*</members>
+    <name>CustomObject</name>
+  </types>
   <version>44.0</version>
 </Package>
