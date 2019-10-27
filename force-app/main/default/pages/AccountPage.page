@@ -1,0 +1,8 @@
+<apex:page standardController="Account"  extensions="AccountPageCtrl">
+    <apex:form >
+    	<apex:commandButton value="Click to see the detail page" action="{!showDetail}" rendered="{!showButton}"/>
+    </apex:form>
+    
+    <c:DetailPage objectName="Account" rendered="{!showDetailPage}"/>
+    <c:DisplayInfo objectName="Account"/>
+</apex:page>

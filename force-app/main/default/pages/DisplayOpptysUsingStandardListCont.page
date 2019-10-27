@@ -1,0 +1,14 @@
+<apex:page standardcontroller="Opportunity" recordSetVar="opportunities" 
+			extensions="DisplayOpptysController">
+	<apex:form >
+	<apex:pageblock title="Oppty table" mode="detail">
+		<apex:pageblocktable value="{!opportunities}" var="oppty">
+			<apex:column value="{!oppty.Name}"/>
+			<apex:column value="{!oppty.Account.Name}"/>
+			<apex:column value="{!oppty.StageName}"/>
+			<apex:column value="{!oppty.Closedate}"/>
+		</apex:pageblocktable>
+		
+	</apex:pageblock>
+	</apex:form>
+</apex:page>

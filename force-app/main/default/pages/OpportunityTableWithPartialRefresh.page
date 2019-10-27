@@ -1,0 +1,23 @@
+<apex:page standardController="Account">
+    
+    <apex:form >
+    	<apex:pageBlock title="Related Opportunities">
+        	<apex:pageBlockTable value="{!account.opportunities}" var="oppty">
+                <apex:column >
+                	<apex:facet name="header">Name</apex:facet>
+                    <apex:commandLink reRender="detailPage">
+                    	{!oppty.Name}
+                        <apex:param name="opptyId" value="{!oppty.Id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column value="{!oppty.Account.Name}"/>
+                <apex:column value="{!oppty.CloseDate}"/>
+                <apex:column value="{!oppty.StageName}"/>
+                <apex:column value="{!oppty.Amount}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        <apex:outputPanel id="detailPage">
+        	<apex:detail subject="{!$CurrentPage.parameters.opptyid}" relatedList="false" title="false"/>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

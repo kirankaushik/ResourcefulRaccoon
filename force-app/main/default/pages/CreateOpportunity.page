@@ -1,0 +1,16 @@
+<apex:page standardcontroller="Opportunity">
+	<apex:messages />
+	<apex:form >
+		<apex:pageblock title="New Opportunity" mode="edit">
+			<apex:pageblocksection title="Key Information" columns="2" collapsible="false">
+				<apex:inputField label="Name" value="{!opportunity.Name}"/>
+				<apex:inputField value="{!opportunity.StageName}"/>
+				<apex:inputField value="{!opportunity.CloseDate}"/>
+				<apex:inputField label="Amount" value="{!opportunity.Amount}"/>
+				<apex:inputField value="{!opportunity.CurrencyIsoCode}"/>
+			</apex:pageblocksection>
+			<apex:commandButton value="Save" action="{!save}"/>
+		</apex:pageblock>
+	</apex:form>
+    
+</apex:page>

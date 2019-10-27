@@ -1,0 +1,16 @@
+<apex:page standardcontroller="Opportunity" recordSetVar="opportunities">
+	
+	<apex:form >
+	<apex:pageblock title="Opportunity Table" mode="detail">
+		<apex:pageblocktable value="{!opportunities}" var="oppty">
+			<apex:column value="{!oppty.Name}"/>
+			<apex:column value="{!oppty.Account.Name}"/>
+			<apex:column value="{!oppty.Amount}"/>
+			<apex:column value="{!oppty.CloseDate}"/>
+			<apex:column value="{!oppty.StageName}"/>
+		</apex:pageblocktable>
+		<apex:commandLink value="Previous" action="{!previous}"/>
+		<apex:commandLink value="Next" action="{!next}"/>
+	</apex:pageblock>
+</apex:form>
+</apex:page>

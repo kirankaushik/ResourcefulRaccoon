@@ -1,0 +1,20 @@
+<apex:page controller="GuestDetailsController">
+    
+    <apex:composition template="GuestDetailsTemplate">
+    	
+        <apex:define name="age">
+            <apex:outputLabel value="Enter your age : " for="ageId"/>
+            <apex:inputText id="ageId" value="{!ageInfo}"/>
+        </apex:define>
+        
+        <apex:define name="colour">
+            <apex:outputLabel value="Enter your favourite colour : " for="colourId"/>
+            <apex:inputText value="{!favColourInfo}" id="colourId"/>
+        </apex:define>
+        
+        <apex:outputLabel value="Enter your favourite cricketer : " for="cricketerId"/><!-- As this is not inserted in template vfpage  this wont be displayed-->
+        <apex:inputText id="cricketerId" value="{!favCricketerInfo}"/>
+        
+    </apex:composition>
+    <apex:outputText rendered="{!showMessage}" value="Hi {!nameInfo} . Good to know that your favourite colour is {!favColourInfo}. BTW {!favColourInfo} is not my favourite !!"/>
+</apex:page>

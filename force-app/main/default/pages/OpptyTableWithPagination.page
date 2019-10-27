@@ -1,0 +1,36 @@
+<apex:page StandardController="Opportunity" recordSetvar="opportunities">
+	
+	<apex:form >
+		<apex:pageBlock title="Opportunity Table" mode="detail" id="page_block">
+			<apex:pageBlockSection title="List View Filter" columns="1" collapsible="false">
+				<apex:selectList value="{!filterId}" size="4">
+					<apex:selectOptions value="{!listViewOptions}"/>
+					<apex:actionSupport event="onchange" rerender="block_table"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+			<apex:pageBlockTable value="{!opportunities}" var="oppty" id="block_table">
+				<apex:column value="{!oppty.Name}"/>
+				<apex:column value="{!oppty.Account.Name}"/>
+				<apex:column value="{!oppty.StageName}"/>
+				<apex:column value="{!oppty.CloseDate}"/>
+			</apex:pageBlockTable>
+			<apex:pageBlockSection title="Pagination" columns="4">
+				<apex:outputText value="{!pageNumber} of {!ceiling(resultsize/pageSize)}"/>
+				<apex:commandLink action="{!previous}" value="<<Previous" 
+								  rendered="{!hasPrevious}"/>
+				<apex:outputText value="Previous" style="color:#ccc" 
+								 rendered="{!Not(hasPrevious)}"/>
+				<apex:commandLink action="{!Next}" value="Next>>" 
+								  rendered="{!hasNext}"/>
+				<apex:outputText value="Next" style="color:#ccc" 
+								 rendered="{!Not(hasNext)}"/>
+				<apex:selectList value="{!pageSize}" size="3">
+					<apex:selectOption itemLabel="10" itemValue="10"/>
+					<apex:selectOption itemLabel="20" itemValue="20"/>
+					<apex:selectOption itemLabel="50" itemValue="50"/>
+					<apex:actionSupport event="onchange" rerender="page_block"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

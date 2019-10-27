@@ -1,0 +1,19 @@
+<apex:page controller="UpsertOpportunityController">
+	
+	<apex:form >
+		<apex:pageBlock title="Opportunity Details" mode="edit">
+		<apex:messages />
+			<apex:pageBlockSection title="Key Information" columns="2">
+				<apex:inputField value="{!oppty.Name}"/>
+				<apex:inputField value="{!oppty.AccountId}"/>
+				<apex:inputField value="{!oppty.StageName}"/>
+				<apex:inputField value="{!oppty.CloseDate}"/>
+				<apex:inputField value="{!oppty.CurrencyIsoCode}"/>
+				<apex:inputField value="{!oppty.Amount}"/>
+			</apex:pageBlockSection>
+			<apex:commandButton value="Save" action="{!save}"/>
+			<apex:commandButton value="Cancel" action="{!cancel}"/>
+		</apex:pageBlock>
+	</apex:form>
+
+</apex:page>

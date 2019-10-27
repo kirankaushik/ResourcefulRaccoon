@@ -1,0 +1,14 @@
+<apex:page standardcontroller="Account" recordSetVar="accounts" 
+			extensions="testaccttablectrl">
+	<apex:form >
+	<apex:pageblock title="Acct table" mode="detail">
+		<apex:pageblocktable value="{!accounts}" var="acct">
+			<apex:column value="{!acct.Name}"/>
+			<apex:column value="{!acct.Rating}"/>
+			<apex:column value="{!acct.Industry}"/>
+			<apex:column value="{!acct.NumberOfEmployees}"/>
+		</apex:pageblocktable>
+		<apex:commandLink value="next" action="{!next}"/>
+	</apex:pageblock>
+	</apex:form>
+</apex:page>

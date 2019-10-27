@@ -1,0 +1,14 @@
+<apex:page standardController="Account" extensions="CreateAccountVfPageCtrl">
+    
+    <apex:form >
+    	<apex:pageBlock title="Account Information">
+        	<apex:pageBlockSection title="Key Information" collapsible="false" columns="2">
+                <apex:inputField value="{!account.Name}"/>
+                <apex:inputField value="{!account.Rating}"/>
+                <apex:inputField value="{!account.Industry}"/>
+                <apex:inputField value="{!account.NumberOfEmployees}"/>
+            </apex:pageBlockSection> 
+            <apex:commandButton value="Save" action="{!save}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,14 @@
+<apex:page standardcontroller="Account">
+	
+	<apex:form >
+		<apex:pageblock title="New Account" mode="edit">
+			<apex:pageblocksection title="Key Information" columns="2" collapsible="false">
+				<apex:inputField value="{!account.Name}"/>
+				<apex:inputField value="{!account.Rating}"/>
+				<apex:inputField value="{!account.Industry}"/>
+				<apex:inputField value="{!account.NumberOfEmployees}"/>
+			</apex:pageblocksection>
+			<apex:commandButton value="Save" action="{!save}"/>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

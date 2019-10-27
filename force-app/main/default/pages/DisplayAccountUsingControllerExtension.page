@@ -1,0 +1,15 @@
+<apex:page standardcontroller="Account" extensions="DisplayAccountController">
+	{!WelcomeMessage}
+	<apex:form >
+		<apex:pageBlock title="Account Information" mode="edit">
+			<apex:pageBlockSection title="Key Information" columns="2" collapsible="false">
+				<apex:inputField label="Name" value="{!account.Name}"/>
+				<apex:inputField value="{!account.Rating}"/>
+				<apex:inputField value="{!account.NumberOfEmployees}"/>
+				<apex:inputField value="{!account.Industry}"/>
+			</apex:pageBlockSection>
+			<apex:commandButton value="Save" action="{!save}"/>
+			<apex:commandButton value="Cancel" action="{!cancel}"/>
+		</apex:pageBlock>
+	</apex:form>	
+</apex:page>

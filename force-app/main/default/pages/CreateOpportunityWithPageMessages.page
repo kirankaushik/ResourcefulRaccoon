@@ -1,0 +1,16 @@
+<apex:page standardController="Opportunity" extensions="CreateOpportunityWithPageMessagesCtrl">
+    
+    <apex:form >
+    	<apex:pageBlock title="Oppty Info">
+        	<apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection title="Key Info" collapsible="false" columns="2">
+            	<apex:inputField value="{!opportunity.Name}"/>
+                <apex:inputField value="{!opportunity.AccountId}"/>
+                <apex:inputField value="{!opportunity.CloseDate}"/>
+                <apex:inputField value="{!opportunity.StageName}"/>
+                <apex:inputField value="{!opportunity.Amount}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!save}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

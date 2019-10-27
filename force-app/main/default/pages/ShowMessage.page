@@ -1,0 +1,6 @@
+<apex:page StandardController="Account" extensions="CreateAccountVfPageCtrl">
+    
+    <apex:include pageName="CreateAccountVfPage"/>
+    
+    <apex:outputText rendered="{!showMessage}" value="Account is saved"/>
+</apex:page>

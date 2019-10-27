@@ -1,0 +1,17 @@
+<apex:page controller="CalculatorActionsController">
+    
+    <apex:form >
+        <apex:inputText value="{!number1}"/><br/><br/>
+        <apex:inputText value="{!number2}"/><br/><br/>
+        <apex:selectlist value="{!selectedOperation}">
+        	<apex:selectOptions value="{!Options}"></apex:selectOptions>
+        </apex:selectlist>
+        <apex:commandButton value="Show Result" action="{!PerformCalc}">
+            <apex:actionSupport event="onclick" reRender="resultPanel"/>
+        </apex:commandButton>
+        <apex:outputPanel id="resultPanel">
+        	{!result}
+        </apex:outputPanel>
+        
+    </apex:form>
+</apex:page>

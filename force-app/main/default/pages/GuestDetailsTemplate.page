@@ -1,0 +1,14 @@
+<apex:page controller="GuestDetailsController">
+    
+    <apex:form >
+        <apex:outputLabel value="Enter Your Name : " for="nameId"></apex:outputLabel>
+        <apex:inputText value="{!nameInfo}" id="nameId"/>
+        <br/>
+        <apex:insert name="age"/>
+        <br/>
+        <apex:insert name="colour"/>
+        <br/>
+        <apex:commandButton value="Save" action="{!save}"/>
+    </apex:form>
+    
+</apex:page>

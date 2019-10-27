@@ -1,0 +1,33 @@
+<apex:page standardcontroller="Account" recordSetvar="accounts">
+	
+	<apex:form >
+		<apex:pageblock title="Account table" mode="detail" id="account_block">
+			<apex:pageBlockSection title="Filters" columns="1">
+				<apex:selectList value="{!filterId}" size="1">
+					<apex:selectOptions value="{!listViewOptions}"/>
+					<apex:actionSupport event="onchange" 
+										rerender="account_block"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+			<apex:pageblocktable value="{!accounts}" var="account" id="account_table">
+				<apex:column value="{!account.Name}"/>
+				<apex:column value="{!account.Rating}"/>
+				<apex:column value="{!account.Industry}"/>
+				<apex:column value="{!account.NumberOfEmployees}"/>
+			</apex:pageblocktable>
+			<apex:pageblockSection title="Pagination" columns="4">
+				<apex:outputtext value="{!pageNumber} of {!ceiling(resultSize/pageSize)}"/>
+				<apex:commandLink value="<<Previous" action="{!previous}" rendered="{!hasPrevious}"/>
+				<apex:outputText value="<<Previous" style="color:#ccc" rendered="{!Not(hasPrevious)}"/>
+				<apex:commandLink value="Next>>" action="{!Next}" rendered="{!hasNext}"/>
+				<apex:outputText value="Next>>" style="color:#ccc" rendered="{!Not(hasNext)}"/>
+				<apex:selectList value="{!pageSize}">
+					<apex:selectOption itemLabel="5" itemValue="5"/>
+					<apex:selectOption itemLabel="20" itemValue="20"/>
+					<apex:selectOption itemLabel="100" itemValue="100"/>
+					<apex:actionSupport event="onchange" rerender="account_block"/>
+				</apex:selectList>
+			</apex:pageblockSection>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

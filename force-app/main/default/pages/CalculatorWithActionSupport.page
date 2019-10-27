@@ -1,0 +1,16 @@
+<apex:page controller="CalculatorWithActionSupportCtrl">
+    
+    <apex:form >
+    	<apex:pageBlock title="Calculate">
+            Number 1 : &nbsp; <apex:inputText value="{!value1}"/><br/><br/>
+            Number 2 : &nbsp; <apex:inputText value="{!value2}"/>
+            <apex:pageBlockSection title="Operation" collapsible="false" columns="3">
+            	<apex:selectList value="{!selectedOperation}">
+                    <apex:selectOptions value="{!possibleOperations}"/>
+                    <apex:actionSupport event="onchange" reRender="{!calculateNewResult}"/>
+                </apex:selectList>
+                Result : <apex:outputText >{!result}</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

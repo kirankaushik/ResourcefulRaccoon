@@ -1,0 +1,8 @@
+<apex:page >
+    
+    
+        <apex:insert name="header"/>
+        <apex:insert name="table"/>
+        <apex:insert name="footer"/>
+    
+</apex:page>

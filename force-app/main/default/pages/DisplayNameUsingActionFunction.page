@@ -1,0 +1,17 @@
+<apex:page controller="DisplayNameUsingActionFunctionCtrl">
+    
+    <apex:form >
+        <apex:actionFunction name="sayMyName" action="{!getUserName}" reRender="outputPanel" status="statusId"/>
+        
+        <apex:outputPanel id="outputPanel">
+        	<apex:outputText value="Hello "></apex:outputText>
+            <apex:actionStatus startText="requesting..." id="statusId">
+            	<apex:facet name="stop">{!userName}</apex:facet>
+            </apex:actionStatus>
+        </apex:outputPanel>
+        
+        <script>
+        	window.setTimeout(sayMyName,2000)
+        </script>
+    </apex:form>
+</apex:page>

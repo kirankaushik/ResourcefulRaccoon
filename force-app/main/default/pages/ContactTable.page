@@ -1,0 +1,21 @@
+<apex:page standardController="contact" recordSetVar="contacts">
+    
+    <apex:form >
+    	<apex:pageBlock title="Contacts table">
+        	<apex:pageBlocktable value="{!contacts}" var="con">
+                <apex:column >
+                	<apex:facet name="header">Name</apex:facet>
+                    <apex:commandLink >
+                    {!con.Name}
+                        <apex:param name="contactid" value="{!con.Id}"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                	<apex:facet name="header">Phone</apex:facet>{!con.Phone}
+                </apex:column>
+            </apex:pageBlocktable>
+            
+        </apex:pageBlock>
+        <apex:detail subject="{!$CurrentPage.parameters.contactid}" relatedList="false" title="false"/>
+    </apex:form>
+</apex:page>
