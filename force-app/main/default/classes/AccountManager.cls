@@ -1,5 +1,5 @@
 @RestResource(UrlMapping='/Accounts/*/contacts')
-global class AccountManager {
+global class AccountManager {//To perform GET call in below method
 
     @HttpGet
     global static Account getAccount(){
